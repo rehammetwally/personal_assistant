@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Personal Assistant | SaaS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+    <div id="auth-container" class="auth-page">
+        <div class="auth-card glass">
+            <h1 class="glow-text">Assistant AI</h1>
+            <p class="subtitle">Your intelligent productivity partner</p>
+            
+            <div class="tab-buttons">
+                <button id="tab-login" class="active" onclick="showAuth('login')">Login</button>
+                <button id="tab-register" onclick="showAuth('register')">Register</button>
+            </div>
+
+            <form id="auth-form" onsubmit="handleAuth(event)">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required placeholder="name@example.com">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required placeholder="••••••••">
+                </div>
+                <button type="submit" id="auth-submit" class="primary-btn">Sign In</button>
+            </form>
+            <p id="auth-error" class="error-msg"></p>
+        </div>
+    </div>
+
+    <div id="main-container" class="dashboard hidden">
+        <aside class="sidebar glass">
+            <div class="sidebar-header">
+                <h2 class="glow-text">Assistant AI</h2>
+            </div>
+            <nav>
+                <button class="nav-item active" onclick="showSection('tasks')">
+                    <span class="icon">📋</span> Tasks
+                </button>
+                <button class="nav-item" onclick="showSection('finance')">
+                    <span class="icon">💰</span> Finance
+                </button>
+                <button class="nav-item" onclick="showSection('ai')">
+                    <span class="icon">🧠</span> AI Chat
+                </button>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <span id="user-email">user@example.com</span>
+                </div>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </aside>
+
+        <main class="content">
+            <!-- Tasks Section -->
+            <section id="section-tasks" class="section">
+                <div class="section-header">
+                    <h1>My Tasks</h1>
+                    <button class="ai-btn" onclick="getAISuggestion()">✨ Get AI Suggestion</button>
+                </div>
+                
+                <div class="add-task-bar glass">
+                    <input type="text" id="new-task-title" placeholder="What needs to be done?">
+                    <button onclick="addTask()" class="add-btn">+</button>
+                </div>
+
+                <div id="task-list" class="task-grid">
+                    <!-- Tasks injected here -->
+                </div>
+            </section>
+
+            <!-- Finance Section -->
+            <section id="section-finance" class="section hidden">
+                <div class="section-header">
+                    <h1>Finance Tracker</h1>
+                    <button class="ai-btn" onclick="getAIBudgetAnalysis()">📊 AI Budget Insights</button>
+                </div>
+
+                <div class="finance-top">
+                    <div class="balance-card glass">
+                        <h3>Total Spending</h3>
+                        <p class="amount" id="total-spending">$0.00</p>
+                    </div>
+                    <div class="add-expense-card glass">
+                        <h3>Add Expense</h3>
+                        <div class="form-row">
+                            <input type="text" id="exp-category" placeholder="Category (e.g. Food)">
+                            <input type="number" id="exp-amount" placeholder="Amount">
+                            <button onclick="addExpense()" class="primary-btn">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expense-views">
+                    <div class="expense-list-container glass">
+                        <h3>Recent Transactions</h3>
+                        <div id="expense-list" class="expense-list">
+                            <!-- Expenses injected here -->
+                        </div>
+                    </div>
+                    <div class="budget-chart-container glass">
+                        <h3>Spending Breakdown</h3>
+                        <div id="category-summary" class="category-summary">
+                            <!-- Categories injected here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Section -->
+            <section id="section-ai" class="section hidden">
+                <div class="section-header">
+                    <h1>AI Assistant</h1>
+                </div>
+                <div class="chat-container glass">
+                    <div id="chat-messages" class="chat-messages">
+                        <div class="bot-msg">Hello! How can I help you today? I can analyze your tasks or help with budgeting.</div>
+                    </div>
+                    <div class="chat-input-bar">
+                        <input type="text" id="chat-input" placeholder="Ask anything..." onkeypress="if(event.key==='Enter') sendChat()">
+                        <button onclick="sendChat()" class="send-btn">Send</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- AI Suggestion Modal -->
+    <div id="ai-modal" class="modal hidden">
+        <div class="modal-content glass">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">AI Insight</h2>
+            <div id="modal-body" class="modal-body">
+                <!-- AI content here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
