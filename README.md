@@ -6,6 +6,14 @@
         <img alt="image" src="https://github.com/user-attachments/assets/1a2316ed-69a8-4f55-867f-278c45265653"  style="width: 100%; height: auto; display: block; margin: 0 auto;"/>    
     </div>
 </div>
+<div style="display: flex; justify-content: space-around;">
+    <div style="width: 50%; padding: 10px;">
+        <img alt="image" src="https://github.com/user-attachments/assets/e688aa61-996c-4af3-8547-768df87aed4b" style="width: 100%; height: auto; display: block; margin: 0 auto;"/>
+    </div>
+     <div style="width: 50%; padding: 10px;">
+        <img alt="image" src="https://github.com/user-attachments/assets/be3ddb27-d167-4343-8b90-cfbeae849c92"  style="width: 100%; height: auto; display: block; margin: 0 auto;"/>    
+    </div>
+</div>
 
 
 
