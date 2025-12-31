@@ -1,3 +1,14 @@
+<div style="display: flex; justify-content: space-around;">
+    <div style="width: 50%; padding: 10px;">
+        <img alt="image" src="https://github.com/user-attachments/assets/8bcfe32a-b01b-4983-8c46-8e4a948c2506"  style="width: 100%; height: auto; display: block; margin: 0 auto;"/>
+    </div>
+    <div style="width: 50%; padding: 10px;">
+        <img alt="image" src="https://github.com/user-attachments/assets/1a2316ed-69a8-4f55-867f-278c45265653"  style="width: 100%; height: auto; display: block; margin: 0 auto;"/>    
+    </div>
+</div>
+
+
+
 # 🤖 SaaS AI Personal Assistant
 
 A production-ready SaaS web application built with **Rust (Axum)** and **SQLite**, integrated with **Groq LLM** for intelligent productivity and financial insights.
@@ -44,6 +55,7 @@ Choosing Rust for this personal assistant SaaS provides several critical advanta
 - Ask the AI to analyze your tasks, suggest budget cuts, or general productivity tips.
 
 ---
+
 
 ## 🏗️ Architecture
 
